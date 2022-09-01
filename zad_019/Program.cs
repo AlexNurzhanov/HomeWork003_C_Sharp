@@ -3,18 +3,34 @@
 //12821 -> да
 //23432 -> да
 
+// Попытка 1:
+// Console.Write("Введите пятизначное число: ");
+// string? number = Console.ReadLine();
 
-Console.Write("Введите пятизначное число: ");
-string? number = Console.ReadLine();
+// void CheckingNumber(string number){
+//   if (number[0]/number[4]==1 && number[1]/number[3]==1){
+//     Console.WriteLine($"Введенное число: {number} - палиндром.");
+//   }
+//   else Console.WriteLine($"Введенное число: {number} - не палиндром.");
+// }
 
-void CheckingNumber(string number){
-  if (number[0]/number[4]==1 && number[1]/number[3]==1){
-    Console.WriteLine($"Введенное число: {number} - палиндром.");
-  }
-  else Console.WriteLine($"Введенное число: {number} - не палиндром.");
+// if (number!.Length == 5){
+//   CheckingNumber(number);
+// }
+// else Console.WriteLine($"Введите правильное число");
+
+//Попытка 2:
+
+bool Palindrome (int num){
+    int a = num / 10000;
+    int b = num % 10;
+    int c = (num / 1000) % 10;
+    int d = (num % 100) /10;
+    if (a ==b && c == d){
+        return true;
+    }
+    else 
+        return false;
+    
 }
-
-if (number!.Length == 5){
-  CheckingNumber(number);
-}
-else Console.WriteLine($"Введите правильное число");
+System.Console.WriteLine(Palindrome(12321));
